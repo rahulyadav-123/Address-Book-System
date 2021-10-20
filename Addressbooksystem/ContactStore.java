@@ -6,16 +6,11 @@ public class ContactStore {
 	private Set<AddressBook> contactList = new HashSet<>();
 
 	public Set<AddressBook> getContactList() {
-		return AbstractList;
+		return contactList;
 	}
 
-	public void add(AddressBook contact) {
-		contactList.add(contact);
-	}
-	
-	public void remove(AddressBook contact) {
-		contactList.remove(contact);
+	public void add(AddressBook address) {
+		contactList.add(address);
 	}
 
 }
-
