@@ -3,7 +3,7 @@ package Addressbooksystem;
 import java.util.Scanner;
 
 public class AddressBookmain {
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		// print welcome message
 				System.out.println(" WELCOME  TO ADDRESS BOOK PROGRAM");
 
@@ -45,12 +45,31 @@ public class AddressBookmain {
 				ContactStore contactStore = new ContactStore();
 
 				// add customer data into contact store
-				contactStore.add(customer1);
-				contactStore.add(addressBook);
-
+				contactStore.add(contactOne);
+				contactStore.add(contactTwo);
+				
+				// create object for userInterface 
 				UserInterface userInterface = new UserInterface();
+				
+				// print contact details
 				userInterface.print(contactStore.getContactList());
-
+			
+				System.out.println("--------- Contact Edit ------------");
+				// print message for user 
+				
+				System.out.print("Find contact detail using First Name: ");
+				String name = scanner.nextLine();
+				
+				// check contact is available or not
+				if(contactOne.getFirstName().equalsIgnoreCase(name) == true)
+					userInterface.edit(contactOne);
+				else if (contactTwo.getFirstName().equalsIgnoreCase(name)== true)
+					userInterface.edit(contactTwo);
+				else
+					System.out.println("Contact Details invalid");
+				
+				System.out.println(" -------- Contact List after edit ---------- ");
+				userInterface.print(contactStore.getContactList());
 			}
 
 	}
