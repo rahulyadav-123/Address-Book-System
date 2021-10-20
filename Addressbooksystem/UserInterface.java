@@ -8,26 +8,89 @@ public class UserInterface {
 			System.out.println(s);
 		}
 	}
-	
+
 	void edit(AddressBook contact) {
-		Scanner scanner = new Scanner(System.in);
+		boolean check = true;
+		while (check == true) {
+			System.out.println(
+					"enter 1.firstName 2.lastName 3.address 4.city 5.state 6.zip 7.phonenumber 8.email to edit");
+			System.out.println("Enter number greater than 8 to Exit");
+			Scanner sc = new Scanner(System.in);
+			int choice = sc.nextInt();
+			switch (choice) {
+			case 1:
+				System.out.println("Enter your new firstName :");
+				Scanner sca = new Scanner(System.in);
+				String name = sca.nextLine();
+				contact.setFirstName(name);
+				break;
+			case 2:
+				System.out.println("Enter your new lastName : ");
+				Scanner scan = new Scanner(System.in);
+				String lastName = scan.nextLine();
+				contact.setLastName(lastName);
+				break;
+			case 3:
+				System.out.println("Enter your new address :");
+				Scanner scann = new Scanner(System.in);
+				String address = scann.nextLine();
+				contact.setAddress(address);
+				break;
+			case 4:
+				System.out.println("Enter your new city : ");
+				Scanner scanne = new Scanner(System.in);
+				String city = scanne.nextLine();
+				contact.setCity(city);
+				break;
+			case 5:
+				System.out.println("Enter your new state :");
+				Scanner s = new Scanner(System.in);
+				String state = s.nextLine();
+				contact.setCity(state);
+				break;
+			case 6:
+				System.out.println("Enter your new zip : ");
+				Scanner scanner = new Scanner(System.in);
+				String zip = scanner.nextLine();
+				contact.setZip(zip);
+				break;
+			case 7:
+				System.out.println("Enter your new phoneNumber :");
+				Scanner scanner1 = new Scanner(System.in);
+				String phoneNumber = scanner1.nextLine();
+				contact.setPhoneNumber(phoneNumber);
+				break;
+			case 8:
+				System.out.println("Enter your new email : ");
+				Scanner scanner2 = new Scanner(System.in);
+				String email = scanner2.nextLine();
+				contact.setEmail(email);
+				break;
+			default:
+				check = false;
+			}
+		}
+	}
+	void addContact(AddressBook contactThree) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter details of new person");
 		System.out.print("Enter Frist Name: ");
-		contact.setFirstName(scanner.nextLine());
+		contactThree.setFirstName(sc.nextLine());
 		System.out.print("Enter Last Name: ");
-		contact.setLastName(scanner.nextLine());
+		contactThree.setLastName(sc.nextLine());
 		System.out.print("Enter Address: ");
-		contact.setAddress(scanner.nextLine());
+		contactThree.setAddress(sc.nextLine());
 		System.out.print("Enter City: ");
-		contact.setCity(scanner.nextLine());
+		contactThree.setCity(sc.nextLine());
 		System.out.print("Enter State: ");
-		contact.setState(scanner.nextLine());
+		contactThree.setState(sc.nextLine());
 		System.out.print("Enter Pin: ");
-		contact.setZip(scanner.nextLine());
+		contactThree.setZip(sc.nextLine());
 		System.out.print("Enter Phone Number: ");
-		contact.setPhoneNumber(scanner.nextLine());
+		contactThree.setPhoneNumber(sc.nextLine());
 		System.out.print("Enter Email: ");
-		contact.setEmail(scanner.nextLine());
+		contactThree.setEmail(sc.nextLine());
 	}
 
-	
 }
+	
