@@ -66,10 +66,31 @@ public class AddressBookmain {
 				else if (contactTwo.getFirstName().equalsIgnoreCase(name)== true)
 					userInterface.edit(contactTwo);
 				else
-					System.out.println("Contact Details invalid");
+				System.out.println("Contact Details invalid");
 				
 				System.out.println(" -------- Contact List after edit ---------- ");
 				userInterface.print(contactStore.getContactList());
+
+				System.out.println("--------- Delete Contact ------------");
+				
+				// print message for user
+				System.out.print("Find contact detail using First Name: ");
+				String contactName = scanner.nextLine();
+				
+				// remove contact detail
+				if(contactOne.getFirstName().equalsIgnoreCase(contactName) == true)
+					contactStore.remove(contactOne);
+				else if (contactTwo.getFirstName().equalsIgnoreCase(contactName) == true)
+					contactStore.remove(contactTwo);
+				else
+					System.err.println("Contact details not found");
+				
+				System.out.println(" -------- Contact List after delete ---------- ");
+				userInterface.print(contactStore.getContactList());
+				
 			}
 
+		
 	}
+			
+	

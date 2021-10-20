@@ -9,8 +9,11 @@ public class ContactStore {
 		return contactList;
 	}
 
-	public void add(AddressBook address) {
-		contactList.add(address);
+	public void add(AddressBook contact) {
+		contactList.add(contact);
+	}	
+	public void remove(AddressBook contact) {
+			contactList.remove(contact);
 	}
 
 }
